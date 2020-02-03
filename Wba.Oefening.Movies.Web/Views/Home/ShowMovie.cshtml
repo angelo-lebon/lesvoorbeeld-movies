@@ -1,0 +1,14 @@
+﻿@model HomeShowMovieVM
+@{
+    ViewData["Title"] = "Movie Info";
+}
+<section class="row">
+    <div class="col-md-12">
+        <header>
+            <h2>@ViewBag.Title</h2>
+        </header>
+    </div>
+
+    <partial name="MovieCardPartial" model="@Model" />
+
+</section>

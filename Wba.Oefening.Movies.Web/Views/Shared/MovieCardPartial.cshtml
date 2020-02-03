@@ -1,0 +1,41 @@
+﻿
+@model HomeShowMovieVM
+
+
+<div class="col-sm-3">
+<article class="card" style="width: 250px">
+    <figure 
+         class="card-image-top" 
+         style="background-image:url('/images/@Model.Movie.Image'); background-size:cover;width:100%;height:377px"> 
+    </figure>
+    <div class="card-body">
+        <h5 class="card-title">@Model.Movie.Title</h5>
+        <div class="card-text">
+            <dl>
+                <dt>Director(s)</dt>
+                @foreach (var director in Model.Movie.Directors)
+                {
+                    <dd>@director.FirstName, @director.SurName</dd>
+                }
+            </dl>
+            <dl>
+                <dt>Actors</dt>
+                @foreach (var actor in Model.Movie.Actors)
+                {
+                    <dd>@actor.FirstName, @actor.SurName</dd>
+                }
+            </dl>
+        </div>
+        @if (!Model.ShowBackButton)
+        {
+            <a asp-controller="Home" asp-action="ShowMovie" asp-route-movieId="@Model.Movie.Id" 
+               class="btn btn-outline-primary">Info</a>
+        }
+        else
+        {
+            <a asp-controller="Home" asp-action="Index" 
+               class="btn btn-outline-primary">Back</a>
+        }
+    </div>
+</article>
+</div>

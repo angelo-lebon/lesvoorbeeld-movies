@@ -1,0 +1,17 @@
+﻿@model Wba.Oefening.Movies.Web.ViewModels.HomeIndexVm
+@{
+    ViewData["Title"] = "My Movies";
+}
+<section class="row">
+    <div class="col-md-12">
+        <header>
+            <h2>@ViewBag.Title</h2>
+        </header>
+    </div>
+
+    @foreach (var movie in Model.Movies)
+    {
+        <partial name="MovieCardPartial" model="@movie" />
+    }
+
+</section>

@@ -1,0 +1,19 @@
+﻿@model PeopleShowActorsVM
+@{
+    ViewData["Title"] = "Actors";
+}
+<section class="row">
+    <div class="col-md-12">
+        <header>
+            <h2>@ViewBag.Title</h2>
+        </header>
+    </div>
+    <div class="col-md-12">
+        <ul class="list-group">
+            @foreach (var name in Model.ActorNames)
+            {
+                <li class="list-group-item">@name</li>
+            }
+        </ul>
+    </div>
+</section>
