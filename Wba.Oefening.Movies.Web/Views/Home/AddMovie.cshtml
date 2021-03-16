@@ -1,0 +1,29 @@
+﻿@model HomeCreateMovieVm
+
+
+<h1>Add a Movie</h1>
+<form asp-action="CreatedMovieOverview" asp-controller="Home" method="post">
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" class="form-control">
+    </div>
+    <div class="form-group">
+        <div class="form-group">
+            <label asp-for="SelectedDirector"></label>
+            <select asp-for="SelectedDirector" asp-items="Model.Directors" class="form-control"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        @for (int i = 0; i < Model.ActorCheckboxes.Count; i++)
+        {
+<input asp-for="ActorCheckboxes[i].IsSelected" />
+                <label asp-for="ActorCheckboxes[i].ActorName">
+                    @Model.ActorCheckboxes[i].ActorName @Model.ActorCheckboxes[i].ActorId
+                </label>
+                                <input type="hidden" asp-for="ActorCheckboxes[i].ActorId"
+                                       value="@Model.ActorCheckboxes[i].ActorId" />}
+    </div>
+    <button class="btn btn-primary" type="submit">
+        Create Movie
+    </button>
+</form>

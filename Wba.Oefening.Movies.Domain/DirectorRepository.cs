@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Wba.Oefening.Movies.Domain
 {
@@ -8,12 +6,12 @@ namespace Wba.Oefening.Movies.Domain
     {
         protected static List<Director> Directors = new List<Director>
         {
-            new Director{FirstName="Steven",SurName="Spielberg" },
-            new Director{FirstName="George", SurName="Lucas" },
-            new Director{FirstName="Martin",SurName="Scorsese" },
-            new Director{FirstName="Quentin",SurName="Tarantino" }
+            new Director{FirstName="Steven",SurName="Spielberg", Id = 1 },
+            new Director{FirstName="George", SurName="Lucas", Id = 2 },
+            new Director{FirstName="Martin",SurName="Scorsese", Id =3 },
+            new Director{FirstName="Quentin",SurName="Tarantino", Id = 4 }
         };
-        
+
 
         public IEnumerable<Director> GetDirectors()
         {

@@ -1,0 +1,18 @@
+﻿@model HomeShowMovieVM
+
+<h1>Movie Created!</h1>
+<h2>Title</h2>
+<p>@Model.Movie.Title</p>
+<h2>Directors</h2>
+<ul>
+    @foreach (var director in Model.Movie.Directors)
+    {
+<li>@director.FirstName</li>}
+</ul>
+
+<h2>Actors</h2>
+<ul>
+    @foreach (var actor in Model.Movie.Actors)
+    {
+<li>@actor.FirstName</li>}
+</ul>
